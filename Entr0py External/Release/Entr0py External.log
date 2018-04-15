@@ -1,7 +1,7 @@
-﻿  UIView.cpp
+﻿  RCS.cpp
   Generating code
-  1 of 536 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
+  10 of 542 functions ( 1.8%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    1 functions had inline decision re-evaluated but remain unchanged
+    23 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   Entr0py External.vcxproj -> C:\Users\FlareFlax\Desktop\Ntr0py-External-CPP-master\Entr0py External C++\Entr0py External\Release\Entr0py External.exe

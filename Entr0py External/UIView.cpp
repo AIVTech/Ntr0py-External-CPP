@@ -66,6 +66,21 @@ void BunnyhopCbx_OnStateChanged(UIElement* sender)
 	}
 }
 
+void RcsCbx_OnStateChanged(UIElement* sender)
+{
+	UICheckbox* cbx = static_cast<UICheckbox*>(sender);
+	if (cbx->GetChecked())
+	{
+		// Enable RCS
+		cheatBase->SetRCS(true);
+	}
+	else
+	{
+		// Disable RCS
+		cheatBase->SetRCS(false);
+	}
+}
+
 void UIView::Init()
 {
 	cheatBase = new CheatBase();
@@ -97,6 +112,7 @@ void UIView::Init()
 	gui.push_back(TriggerbotCbx);
 
 	UICheckbox* RcsCbx = new UICheckbox(graphics, L"Recoil Control", L"Arial", 16, 370, 240, 20, 120, 40);
+	RcsCbx->SetStateChangedEventHandler(RcsCbx_OnStateChanged);
 	gui.push_back(RcsCbx);
 
 	UICheckbox* BunnyhopCbx = new UICheckbox(graphics, L"Auto Bunnyhops", L"Arial", 16, 700, 144, 20, 140, 40);

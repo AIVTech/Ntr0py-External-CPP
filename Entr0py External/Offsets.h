@@ -19,6 +19,7 @@ struct Offsets
 	DWORD m_iCrosshairId = 0xB2A4;
 	DWORD m_iHealth = 0xFC;
 	DWORD dwForceAttack = 0x2EC5BD8;
+	DWORD m_ViewAngles = 0x104;
 	DWORD entityLoopDistance = 0x00000010;
 };
 

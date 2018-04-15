@@ -162,6 +162,7 @@
     <ClInclude Include="ESPGlow.h" />
     <ClInclude Include="MemUtility.h" />
     <ClInclude Include="Offsets.h" />
+    <ClInclude Include="RCS.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Triggerbot.h" />
     <ClInclude Include="UIView.h" />
@@ -170,6 +171,7 @@
     <ClCompile Include="Entr0py External.cpp" />
     <ClCompile Include="ESPGlow.cpp" />
     <ClCompile Include="MemUtility.cpp" />
+    <ClCompile Include="RCS.cpp" />
     <ClCompile Include="Triggerbot.cpp" />
     <ClCompile Include="UIView.cpp" />
   </ItemGroup>

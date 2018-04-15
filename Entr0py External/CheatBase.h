@@ -8,6 +8,7 @@
 #include "BunnyHop.h"
 #include "ESPGlow.h"
 #include "Triggerbot.h"
+#include "RCS.h"
 
 class CheatBase
 {
@@ -51,10 +52,21 @@ public:
 		triggerbot->delay = delay;
 	}
 
+	void SetRCS(bool state)
+	{
+		rcs->running = state;
+		if (state)
+		{
+			std::thread running_thread(&CheatBase::StartRCS, this);
+			running_thread.detach();
+		}
+	}
+
 private:
 	BunnyHop * bunnyHop = new BunnyHop(mem);
 	ESPGlow* espGlow = new ESPGlow(mem);
 	Triggerbot* triggerbot = new Triggerbot(mem);
+	RCS* rcs = new RCS(mem);
 
 	void StartBunnyHop()
 	{
@@ -69,6 +81,11 @@ private:
 	void StartTriggerbot()
 	{
 		triggerbot->Start();
+	}
+
+	void StartRCS()
+	{
+		rcs->Start();
 	}
 };
 
