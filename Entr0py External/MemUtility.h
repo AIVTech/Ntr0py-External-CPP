@@ -26,6 +26,7 @@ public:
 	}
 
 	DWORD ClientBaseAddress = 0;
+	DWORD EngineBaseAddress = 0;
 
 	~MemUtils();
 private:

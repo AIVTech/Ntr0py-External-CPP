@@ -156,12 +156,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="AntiFlash.h" />
     <ClInclude Include="BunnyHop.h" />
     <ClInclude Include="CheatBase.h" />
     <ClInclude Include="Entr0py External.h" />
     <ClInclude Include="ESPGlow.h" />
     <ClInclude Include="MemUtility.h" />
     <ClInclude Include="Offsets.h" />
+    <ClInclude Include="RadarESP.h" />
     <ClInclude Include="RCS.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Triggerbot.h" />

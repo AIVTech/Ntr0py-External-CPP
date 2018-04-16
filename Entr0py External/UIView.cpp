@@ -66,6 +66,7 @@ void BunnyhopCbx_OnStateChanged(UIElement* sender)
 	}
 }
 
+// Recoil Control System Event
 void RcsCbx_OnStateChanged(UIElement* sender)
 {
 	UICheckbox* cbx = static_cast<UICheckbox*>(sender);
@@ -78,6 +79,38 @@ void RcsCbx_OnStateChanged(UIElement* sender)
 	{
 		// Disable RCS
 		cheatBase->SetRCS(false);
+	}
+}
+
+// AntiFlash Event
+void AntiFlashCbx_OnStateChanged(UIElement* sender)
+{
+	UICheckbox* cbx = static_cast<UICheckbox*>(sender);
+	if (cbx->GetChecked())
+	{
+		// Enable AntiFlash
+		cheatBase->SetAntiFlash(true);
+	}
+	else
+	{
+		// Disable AntiFlash
+		cheatBase->SetAntiFlash(false);
+	}
+}
+
+// Radar ESP Event
+void RadarESPCbx_OnStateChanged(UIElement* sender)
+{
+	UICheckbox* cbx = static_cast<UICheckbox*>(sender);
+	if (cbx->GetChecked())
+	{
+		// Enable Radar ESP
+		cheatBase->SetRadarESP(true);
+	}
+	else
+	{
+		// Disable Radar ESP
+		cheatBase->SetRadarESP(false);
 	}
 }
 
@@ -107,6 +140,10 @@ void UIView::Init()
 	GlowESPCbx->SetStateChangedEventHandler(GlowESPCbx_OnStateChanged);
 	gui.push_back(GlowESPCbx);
 
+	UICheckbox* RadarESPCbx = new UICheckbox(graphics, L"Radar ESP", L"Arial", 16, 54, 190, 20, 100, 40);
+	RadarESPCbx->SetStateChangedEventHandler(RadarESPCbx_OnStateChanged);
+	gui.push_back(RadarESPCbx);
+
 	UICheckbox* TriggerbotCbx = new UICheckbox(graphics, L"Triggerbot", L"Arial", 16, 370, 140, 20, 100, 40);
 	TriggerbotCbx->SetStateChangedEventHandler(TriggerbotCbx_OnStateChanged);
 	gui.push_back(TriggerbotCbx);
@@ -118,6 +155,10 @@ void UIView::Init()
 	UICheckbox* BunnyhopCbx = new UICheckbox(graphics, L"Auto Bunnyhops", L"Arial", 16, 700, 144, 20, 140, 40);
 	BunnyhopCbx->SetStateChangedEventHandler(BunnyhopCbx_OnStateChanged);
 	gui.push_back(BunnyhopCbx);
+
+	UICheckbox* AntiFlashCbx = new UICheckbox(graphics, L"No Flash", L"Arial", 16, 700, 190, 20, 90, 40);
+	AntiFlashCbx->SetStateChangedEventHandler(AntiFlashCbx_OnStateChanged);
+	gui.push_back(AntiFlashCbx);
 
 
 	// Sliders

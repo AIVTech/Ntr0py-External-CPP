@@ -19,6 +19,7 @@ void MemUtils::Init()
 	pHandle = OpenProcess(PROCESS_ALL_ACCESS, FALSE, pid);
 
 	ClientBaseAddress = dwGetModuleBaseAddress(pid, L"client.dll");
+	EngineBaseAddress = dwGetModuleBaseAddress(pid, L"engine.dll");
 }
 
 DWORD dwGetModuleBaseAddress(DWORD dwProcID, const wchar_t *szModuleName)

@@ -45,6 +45,12 @@
     <ClInclude Include="RCS.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="AntiFlash.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RadarESP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Entr0py External.cpp">

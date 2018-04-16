@@ -18,7 +18,6 @@ void RCS::Start()
 	while (running)
 	{
 		Sleep(2);
-
 		
 	}
 }
