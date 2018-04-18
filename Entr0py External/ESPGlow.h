@@ -14,7 +14,7 @@ class ESPGlow
 {
 public:
 	bool running = false;
-	bool glowHealth = true;
+	bool glowHealth = false;
 	bool glowAllPlayers = false;
 	Glow_T Team;
 	Glow_T EnemyTeam;

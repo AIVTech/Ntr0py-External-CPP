@@ -84,6 +84,31 @@ public:
 		}
 	}
 
+	void SetESPGlowMode(int mode)
+	{
+		switch (mode)
+		{
+		case 1:
+			espGlow->glowHealth = false;
+			espGlow->glowAllPlayers = false;
+			break;
+		case 2:
+			espGlow->glowHealth = false;
+			espGlow->glowAllPlayers = true;
+			break;
+		case 3:
+			espGlow->glowHealth = true;
+			espGlow->glowAllPlayers = false;
+			break;
+		case 4:
+			espGlow->glowHealth = true;
+			espGlow->glowAllPlayers = true;
+			break;
+		default:
+			break;
+		}
+	}
+
 private:
 	BunnyHop * bunnyHop = new BunnyHop(mem);
 	ESPGlow* espGlow = new ESPGlow(mem);

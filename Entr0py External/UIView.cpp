@@ -3,6 +3,7 @@
 CheatBase* cheatBase;
 UILabel* TriggerbotDelayLbl;
 UISlider* TriggerbotDelaySlider;
+UICombobox* GlowESPCombobox;
 
 // Glow ESP Event
 void GlowESPCbx_OnStateChanged(UIElement* sender)
@@ -12,11 +13,13 @@ void GlowESPCbx_OnStateChanged(UIElement* sender)
 	{
 		// Enable Glow ESP
 		cheatBase->SetESPGlow(true);
+		GlowESPCombobox->SetEnabled(true);
 	}
 	else
 	{
 		// Disable Glow ESP
 		cheatBase->SetESPGlow(false);
+		GlowESPCombobox->SetEnabled(false);
 	}
 }
 
@@ -114,6 +117,29 @@ void RadarESPCbx_OnStateChanged(UIElement* sender)
 	}
 }
 
+void GlowESPCombobox_SelectedIndexChanged(UIElement* sender)
+{
+	UICombobox* combo = static_cast<UICombobox*>(sender);
+	int index = combo->GetSelectedIndex();
+	switch (index)
+	{
+	case 1:
+		cheatBase->SetESPGlowMode(index);
+		break;
+	case 2:
+		cheatBase->SetESPGlowMode(index);
+		break;
+	case 3:
+		cheatBase->SetESPGlowMode(index);
+		break;
+	case 4:
+		cheatBase->SetESPGlowMode(index);
+		break;
+	default:
+		break;
+	}
+}
+
 void UIView::Init()
 {
 	cheatBase = new CheatBase();
@@ -140,7 +166,7 @@ void UIView::Init()
 	GlowESPCbx->SetStateChangedEventHandler(GlowESPCbx_OnStateChanged);
 	gui.push_back(GlowESPCbx);
 
-	UICheckbox* RadarESPCbx = new UICheckbox(graphics, L"Radar ESP", L"Arial", 16, 54, 190, 20, 100, 40);
+	UICheckbox* RadarESPCbx = new UICheckbox(graphics, L"Radar ESP", L"Arial", 16, 54, 220, 20, 100, 40);
 	RadarESPCbx->SetStateChangedEventHandler(RadarESPCbx_OnStateChanged);
 	gui.push_back(RadarESPCbx);
 
@@ -159,6 +185,18 @@ void UIView::Init()
 	UICheckbox* AntiFlashCbx = new UICheckbox(graphics, L"No Flash", L"Arial", 16, 700, 190, 20, 90, 40);
 	AntiFlashCbx->SetStateChangedEventHandler(AntiFlashCbx_OnStateChanged);
 	gui.push_back(AntiFlashCbx);
+
+	
+	// Comboboxes
+	GlowESPCombobox = new UICombobox(graphics, 54, 176, 140, 20);
+	GlowESPCombobox->AddItem(L"Default");
+	GlowESPCombobox->AddItem(L"Default + Teammates");
+	GlowESPCombobox->AddItem(L"Health Based");
+	GlowESPCombobox->AddItem(L"Health Based + Teammates");
+	GlowESPCombobox->SetSelectedIndexChangedEventHandler(GlowESPCombobox_SelectedIndexChanged);
+	GlowESPCombobox->SetEnabled(false);
+	GlowESPCombobox->SetRoundedCorners(true);
+	gui.push_back(GlowESPCombobox);
 
 
 	// Sliders

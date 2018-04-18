@@ -91,8 +91,28 @@ void ESPGlow::Start()
 					}
 					else
 					{
-						// Glow Teammates
-						//EnableGlow(GlowIndex, Team); // off for later user choices
+						// If user wants to, render teammates too
+						if (glowAllPlayers)
+						{
+							Team.r = 1;
+							Team.g = 1;
+							Team.b = 0;
+							EnableGlow(GlowIndex, Team);
+						}
+					}
+				}
+				else
+				{
+					if (MyTeam == OpponentTeam)
+					{
+						if (glowAllPlayers)
+						{
+							EnableGlow(GlowIndex, Team);
+						}
+					}
+					else
+					{
+						EnableGlow(GlowIndex, EnemyTeam);
 					}
 				}
 			}

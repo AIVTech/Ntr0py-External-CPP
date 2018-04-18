@@ -15,9 +15,15 @@ RCS::~RCS()
 
 void RCS::Start()
 {
+	Vector3f vPunch;
+
+	Vector3f AimAngle;
+	Vector3f OldAngle;
+	Vector3f ViewAngle;
+
 	while (running)
 	{
 		Sleep(2);
-		
+
 	}
 }
